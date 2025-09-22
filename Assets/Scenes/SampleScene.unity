@@ -272,7 +272,7 @@ MonoBehaviour:
   cellPrefab: {fileID: 8990095373389810394, guid: 26ca4edb3fc998a408360b0141759f96, type: 3}
   width: 5
   height: 5
-  cellSize: 2
+  cellSize: 1
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
