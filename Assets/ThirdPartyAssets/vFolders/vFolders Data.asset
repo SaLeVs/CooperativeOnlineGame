@@ -18,6 +18,8 @@ MonoBehaviour:
     - 9c53962885c2c4f449125a979d6ad240
     - 709f11a7f3c4041caa4ef136ea32d874
     - f150a2432805e61428bd8cdce6edcfc7
+    - dc28c96496dab994bbad32b0ec82f17c
+    - 9fee82f0cd9867446a9dd92acea54f1d
     values:
     - iconNameOrGuid: Settings Icon
       colorIndex: 1
@@ -33,6 +35,14 @@ MonoBehaviour:
       isColorRecursive: 0
     - iconNameOrGuid: HumanTemplate Icon
       colorIndex: 10
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: cs Script Icon
+      colorIndex: 5
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: Prefab Icon
+      colorIndex: 7
       isIconRecursive: 0
       isColorRecursive: 0
   bookmarks:
