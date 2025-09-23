@@ -6,11 +6,12 @@ public class TestGrid : MonoBehaviour
     [SerializeField] private int width;
     [SerializeField] private int height;
     [SerializeField] private int cellSize;
+    [SerializeField] private Vector3 originPoint;
     
 
     void Start()
     {
-        Grid grid = new Grid(width, height, cellSize, cellPrefab);
+        Grid grid = new Grid(width, height, cellSize, originPoint, cellPrefab);
     }
     
 }

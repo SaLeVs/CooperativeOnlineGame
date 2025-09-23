@@ -3,16 +3,26 @@ using UnityEngine;
 
 public class Grid
 {
+    public event EventHandler<OnGridValueChangedEventArgs> OnGridValueChanged;
+    
+    public class OnGridValueChangedEventArgs : EventArgs
+    {
+        public int _x;
+        public int _z;
+    }
+    
     private int _width;
     private int _length;
     private float _cellSize;
+    private Vector3 _originPosition;
     private int [,] _gridArray;
     
-    public Grid(int width, int length, int cellSize, GameObject cellPrefab)
+    public Grid(int width, int length, int cellSize, Vector3 originPosition, GameObject cellPrefab)
     {
         _width = width;
         _length = length;
         _cellSize = cellSize;
+        _originPosition = originPosition;
         
         _gridArray = new int[width, length];
         
@@ -28,13 +38,13 @@ public class Grid
    
     private Vector3 GetWorldPosition(int x, int z)
     {
-        return new Vector3(x, 0, z) * _cellSize;
+        return new Vector3(x, 0, z) * _cellSize + _originPosition;
     }
     
     private void GetXY(Vector3 worldPosition, out int x, out int z)
     {
-        x = Mathf.FloorToInt(worldPosition.x / _cellSize);
-        z = Mathf.FloorToInt(worldPosition.z / _cellSize);
+        x = Mathf.FloorToInt((worldPosition - _originPosition).x / _cellSize);
+        z = Mathf.FloorToInt((worldPosition - _originPosition).z / _cellSize);
     }
     
     public void SetValue(int x, int z, int value)
@@ -43,6 +53,8 @@ public class Grid
         {
             _gridArray[x, z] = value;
         }
+        
+        OnGridValueChanged?.Invoke(this, new OnGridValueChangedEventArgs { _x = x, _z = z});
     }
     
 
@@ -55,5 +67,23 @@ public class Grid
         SetValue(x, z, value);
     }
 
+    public int GetValue(int x, int z)
+    {
+        if (x >= 0 && z >= 0 && x < _width && z < _length)
+        {
+            return _gridArray[x, z];
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public int GetValue(Vector3 worldPosition)
+    {
+        int x, z;
+        GetXY(worldPosition, out x, out z);
+        return GetValue(x, z);
+    }
     
 }
