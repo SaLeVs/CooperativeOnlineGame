@@ -4,6 +4,12 @@
             "colors": [],
             "styles": [],
             "showComponents": [],
+            "sceneName": "Demo3DShader"
+        },
+        {
+            "colors": [],
+            "styles": [],
+            "showComponents": [],
             "sceneName": "SampleScene"
         }
     ]
