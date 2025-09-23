@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Grid
+public class GridData
 {
     public event EventHandler<OnGridValueChangedEventArgs> OnGridValueChanged;
     
@@ -16,32 +16,23 @@ public class Grid
     private float _cellSize;
     private Vector3 _originPosition;
     private int [,] _gridArray;
+
     
-    public Grid(int width, int length, int cellSize, Vector3 originPosition, GameObject cellPrefab)
+    public GridData(int width, int length, int cellSize, Vector3 originPosition)
     {
         _width = width;
         _length = length;
         _cellSize = cellSize;
         _originPosition = originPosition;
-        
         _gridArray = new int[width, length];
-        
-        for(int x = 0; x < _gridArray.GetLength(0); x++)
-        {
-            for(int z = 0; z < _gridArray.GetLength(1); z++)
-            {
-                // Just for Debugging
-                GameObject.Instantiate(cellPrefab, GetWorldPosition(x, z), Quaternion.identity);
-            }
-        }
     }
    
-    private Vector3 GetWorldPosition(int x, int z)
+    public Vector3 GetWorldPosition(int x, int z)
     {
         return new Vector3(x, 0, z) * _cellSize + _originPosition;
     }
     
-    private void GetXY(Vector3 worldPosition, out int x, out int z)
+    public void GetXY(Vector3 worldPosition, out int x, out int z)
     {
         x = Mathf.FloorToInt((worldPosition - _originPosition).x / _cellSize);
         z = Mathf.FloorToInt((worldPosition - _originPosition).z / _cellSize);

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TestGrid : MonoBehaviour
+public class TestGridData : MonoBehaviour
 {
     [SerializeField] private GameObject cellPrefab;
     [SerializeField] private int width;
@@ -11,7 +11,7 @@ public class TestGrid : MonoBehaviour
 
     void Start()
     {
-        Grid grid = new Grid(width, height, cellSize, originPoint, cellPrefab);
+        //GridData gridData = new GridData(width, height, cellSize, originPoint, cellPrefab);
     }
     
 }

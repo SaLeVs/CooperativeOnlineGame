@@ -266,13 +266,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e1751054436a4441ab0fa15b9e26d07, type: 3}
+  m_Script: {fileID: 11500000, guid: cb3baaac707503b418a2f6e6f8ec00de, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TestGrid
+  m_EditorClassIdentifier: Assembly-CSharp::GridSpawner
   cellPrefab: {fileID: 8990095373389810394, guid: 26ca4edb3fc998a408360b0141759f96, type: 3}
-  width: 5
-  height: 5
+  width: 20
+  length: 20
   cellSize: 2
+  originPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
