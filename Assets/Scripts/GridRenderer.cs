@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GridSpawner : MonoBehaviour
+public class GridRenderer : MonoBehaviour
 {
     [SerializeField] private GameObject cellPrefab;
     [SerializeField] private int width;

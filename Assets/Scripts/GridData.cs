@@ -32,13 +32,13 @@ public class GridData
         return new Vector3(x, 0, z) * _cellSize + _originPosition;
     }
     
-    public void GetXY(Vector3 worldPosition, out int x, out int z)
+    private void GetXY(Vector3 worldPosition, out int x, out int z)
     {
         x = Mathf.FloorToInt((worldPosition - _originPosition).x / _cellSize);
         z = Mathf.FloorToInt((worldPosition - _originPosition).z / _cellSize);
     }
     
-    public void SetValue(int x, int z, int value)
+    private void SetValue(int x, int z, int value)
     {
         if (x >= 0 && z >= 0 && x < _width && z < _length)
         {
