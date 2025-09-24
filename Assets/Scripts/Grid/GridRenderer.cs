@@ -12,15 +12,18 @@ public class GridRenderer : MonoBehaviour
 
     private void Start()
     {
-        _gridData = new GridData(width, length, cellSize, transform.position);
+        _gridData = new GridData(width, length, cellSize, originPoint);
         
+        GameObject cubesParent = new GameObject("CubesParent");
         
         for(int x = 0; x < width; x++)
         {
             for(int z = 0; z < length; z++)
             {
                 // Just for Debugging
-                GameObject.Instantiate(cellPrefab, _gridData.GetWorldPosition(x, z), Quaternion.identity);
+                
+                GameObject cube = GameObject.Instantiate(cellPrefab, _gridData.GetWorldPosition(x, z), Quaternion.identity);
+                cube.transform.SetParent(cubesParent.transform);
             }
         }
     }
