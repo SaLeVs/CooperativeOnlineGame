@@ -27,6 +27,8 @@ MonoBehaviour:
     - bf0a86d9c3656864180b766395d6922e
     - 52e083966f0a8b749945e9d37debd5cf
     - ced5f2a4e121f4d46a2d6dd479704911
+    - 4c8c0365e47ad8a4bb8a3b7be6ac79cd
+    - eb91093f5fc651f4ca7c5e36e2a5b9cc
     values:
     - iconNameOrGuid: Settings Icon
       colorIndex: 1
@@ -78,6 +80,14 @@ MonoBehaviour:
       isColorRecursive: 0
     - iconNameOrGuid: 
       colorIndex: 1
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: StandaloneInputModule Icon
+      colorIndex: 8
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: 
+      colorIndex: 8
       isIconRecursive: 0
       isColorRecursive: 0
   bookmarks:
